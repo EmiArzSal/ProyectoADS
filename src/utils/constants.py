@@ -1,5 +1,5 @@
 APP_COLORS = {
-    "primary": "#399B53",  # Verde principal (color basado en tu icono)
+    "primary": "#399B53",     # Verde principal (color basado en tu icono)
     "secondary": "#2E3630",  # Negro/gris oscuro para fondos o textos
     "accent": "#41E06C",  # Verde claro (para destacar botones o textos)
     "background": "#222222",  # Gris (para fondo principal)
@@ -8,6 +8,6 @@ APP_COLORS = {
     "text_secondary": "#A8A8A8",  # Texto gris claro
     "error": "#FF4D4D",  # Rojo para errores
     "popups": "#4E614D", # Para notificaciones
-    "other": "#35B657" # Otra opcion de verde
+    "other": "#003B1D" # Otra opcion de verde
 }
 
