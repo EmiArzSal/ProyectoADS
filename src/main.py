@@ -3,7 +3,7 @@ from router import views_handler
 from utils.constants import APP_COLORS
 
 def main(page: ft.Page):
-
+    page.window_icon = "assets/icon.ico"
     def route_change(route):
         page.views.clear()
         page.views.append(views_handler(page)[page.route])
