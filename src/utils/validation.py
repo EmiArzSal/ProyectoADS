@@ -15,7 +15,7 @@ class Validation():
       if not any(char.isdigit() for char in password):
         return False
 
-      if not re.search("[@_!#$%^&*()<>?/\|}{-:]", password):
+      if not re.search(r"[@_!#$%^&?/\|]", password):
         return False
       
       return True

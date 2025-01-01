@@ -5,7 +5,7 @@ from utils.constants import APP_COLORS
 class loginGoogle(ft.Container):
     def __init__(self, page: ft.Page):
         super().__init__(page)
-        button_colortext = APP_COLORS['other']
+        button_colortext = APP_COLORS['accent_btn_sec']
 
         self.content = ft.Row(
             controls=[
