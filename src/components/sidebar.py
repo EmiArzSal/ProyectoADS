@@ -14,11 +14,11 @@ def Sidebar(page: ft.Page):
                     ft.IconButton(
                         icon=icon,
                         icon_color="white",
-                        icon_size=30,
+                        icon_size=35,
                         tooltip=label,
                         on_click=navigate
                     ),
-                    ft.Text(label, color="white", size=12, text_align=ft.TextAlign.CENTER)
+                    ft.Text(label, color="white", size=14, text_align=ft.TextAlign.CENTER)
                 ],
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 spacing=5
@@ -29,7 +29,7 @@ def Sidebar(page: ft.Page):
     return ft.Container(
         content=ft.Column(
             controls=[
-                ft.Text("CashWise", color="white", size=20, weight="bold"),
+                ft.Text("AxoBank", color="white", size=20, weight="bold"),
                 ft.Container(height=30),  # Espacio después del título
                 create_nav_item(ft.Icons.DASHBOARD, "Dashboard", "/dashboard"),
                 create_nav_item(ft.Icons.ACCOUNT_BALANCE_WALLET, "Ingresos", "/ingresos"),

@@ -4,10 +4,11 @@ from utils.validation import Validation
 
 class Login(ft.UserControl):
     def __init__(self, page: ft.Page):
+        notification = APP_COLORS['error']
         super().__init__()
         self.page = page
         self.validation = Validation()
-        
+
         self.email_field = ft.TextField(
             label="Correo electrónico",
             border=ft.InputBorder.NONE,
@@ -139,14 +140,14 @@ class Login(ft.UserControl):
 
     def validate_email(self, e):
         if not self.validation.is_valid_email(self.email_field.value):
-            self.email_field.error_text = "Correo electrónico inválido"
+            print("Correo electrónico inválido")
         else:
             self.email_field.error_text = None
         self.email_field.update()
 
     def validate_password(self, e):
         if not self.validation.is_valid_password(self.password_field.value):
-            self.password_field.error_text = "La contraseña debe tener al menos 8 caracteres, un número y un carácter especial"
+            print("Contraseña inválida")
         else:
             self.password_field.error_text = None
         self.password_field.update()
@@ -159,10 +160,16 @@ class Login(ft.UserControl):
             print("Has entrado exitosamente!")  # Para depuración
             self.page.go("/dashboard")
         else:
-            if not is_email_valid:
-                self.email_field.error_text = "Correo electrónico inválido"
-            if not is_password_valid:
-                self.password_field.error_text = "Contraseña inválida"
-            self.email_field.update()
-            self.password_field.update()
-        self.update()  # Asegurarse de que la UI se actualice
+            self.show_alert("Email o contraseña inválidos")
+
+    def show_alert(self, message):
+        snackbar = ft.SnackBar(
+            content=ft.Text(message),
+            action="Cerrar",
+            duration=5000,
+            bgcolor=APP_COLORS['error'],
+            action_color="white",
+        )
+        self.page.overlay.append(snackbar)
+        snackbar.open = True
+        self.page.update()
